@@ -1,0 +1,61 @@
+<!--
+HTML DOM Element insertAdjacentHTML()
+Insert a new <p> element after a header element:
+
+afterbegin	After the beginning of the element (first child)
+afterend	After the element
+beforebegin	Before the element
+beforeend	Before the end of the element (last child)
+
+
+-->
+
+<h2 id="myH2">My Header</h2>
+
+<script>
+
+  const h2 = document.getElementById("myH2");
+  let html = "<p>My new paragraph.</p>";
+  h2.insertAdjacentHTML("afterend", html);
+  
+</script>
+
+
+
+<script>
+      let jsonData = `
+      {
+		"products": [
+			{
+				"id": 1,
+				"productName": "Apple",
+				"Qty": 100
+			},
+			{
+				"id": 2,
+				"productName": "Pineapple",
+				"Qty": 120
+			},
+			{
+				"id": 3,
+				"productName": "Mango",
+				"Qty": 10
+			}
+		]
+}
+        `;
+		
+		
+		// convert json to object 
+			
+        let Object = JSON.parse(jsonData)
+		for(const myData of Object.products)
+		{
+            const data=`<p>${myData.id} : ${myData.productName} , Total Quantity : ${myData.Qty}</p>`;
+			h2.insertAdjacentHTML('afterend',data);
+        }
+		
+		
+		
+
+</script>		

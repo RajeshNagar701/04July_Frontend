@@ -1,0 +1,41 @@
+<!--
+The polymorphism is a core concept of an object-oriented paradigm that provides a way to 
+perform a single action in different forms. It provides an ability to call the same 
+method on different JavaScript objects. As JavaScript is not a type-safe language, 
+we can pass any type of data members with the methods.
+
+
+
+1) overloading   not posiible 
+2) overiding  
+
+-->
+
+<script>  
+class A  
+  {  
+     display()  
+    {  
+      document.writeln("A is invoked<br>");  
+    }  
+  }  
+class B extends A  
+  {  
+    display()  
+    {  	
+      document.writeln("B is invoked");  
+    }  
+  } 
+class C extends B  
+  {  
+    display()  
+    {  	
+      document.writeln("C is invoked");  
+    }  
+  }  
+var a=[new A(), new B(), new C()]  
+a.forEach(function(msg)  
+{  
+msg.display();  
+});  
+</script>  
